@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kilometer to Mile Converter</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            text-align: center;
+            width: 320px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        input {
+            width: 90%;
+            padding: 12px;
+            margin: 15px 0;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+
+        button {
+            background: #667eea;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background: #4b5fc4;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h2>Kilometer to Mile Converter</h2>
+
+        <p>Enter Distance in Kilometers</p>
+
+        <input type="number" id="km" placeholder="Enter kilometers">
+
+        <br>
+
+        <button onclick="convert()">Convert</button>
+
+        <div id="result"></div>
+
+    </div>
+
+    <script>
+        function convert() {
+
+            let km = document.getElementById("km").value;
+
+            if (km === "" || km < 0) {
+                document.getElementById("result").innerHTML =
+                    "Please enter a valid distance!";
+                return;
+            }
+
+            let miles = km * 0.621371;
+
+            document.getElementById("result").innerHTML =
+                km + " Kilometers = " + miles.toFixed(3) + " Miles";
+        }
+    </script>
+
+</body>
+</html>
